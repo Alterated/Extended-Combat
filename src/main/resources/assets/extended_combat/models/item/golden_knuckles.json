@@ -1,0 +1,17 @@
+{
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "extended_combat:item/golden_knuckles_held"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "extended_combat:item/golden_knuckles_gui"
+    },
+    "ground": {
+      "parent": "extended_combat:item/golden_knuckles_gui"
+    },
+    "fixed": {
+      "parent": "extended_combat:item/golden_knuckles_gui"
+    }
+  }
+}
