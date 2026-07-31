@@ -1,4 +1,4 @@
-package mods.PDP1.extended_combat.item;
+package mods.PDP1.extended_combat.item.registry;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

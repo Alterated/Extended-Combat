@@ -1,8 +1,10 @@
-package mods.PDP1.extended_combat.item;
+package mods.PDP1.extended_combat.item.init;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import mods.PDP1.extended_combat.Extendedcombat;
+import mods.PDP1.extended_combat.item.registry.KnuckleDamage;
+import mods.PDP1.extended_combat.item.registry.ModArmorMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -34,7 +36,7 @@ public class ModItems {
                     ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
                     builder.putAll(super.getAttributeModifiers(slot, stack));
                     if (slot == EquipmentSlot.FEET) {
-                        builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED_ID, "Slides Speed", 0.20, AttributeModifier.Operation.MULTIPLY_BASE));
+                        builder.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(SPEED_ID, "Slides Speed", 0.2, AttributeModifier.Operation.MULTIPLY_BASE));
                     }
                     return builder.build();
                 }

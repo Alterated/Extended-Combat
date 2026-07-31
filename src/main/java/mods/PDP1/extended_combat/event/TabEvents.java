@@ -1,6 +1,6 @@
 package mods.PDP1.extended_combat.event;
 
-import mods.PDP1.extended_combat.item.ModItems;
+import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;

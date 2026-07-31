@@ -1,25 +1,17 @@
 package mods.PDP1.extended_combat.event;
 
 import mods.PDP1.extended_combat.Extendedcombat;
-import mods.PDP1.extended_combat.item.KnuckleDamage;
-import mods.PDP1.extended_combat.item.ModItems;
-import net.minecraft.world.entity.EquipmentSlot;
+import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.ItemAttributeModifierEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = Extendedcombat.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 class PlayerEvents {

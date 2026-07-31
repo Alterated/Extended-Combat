@@ -1,7 +1,7 @@
 package mods.PDP1.extended_combat;
 
 import com.mojang.logging.LogUtils;
-import mods.PDP1.extended_combat.item.ModItems;
+import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
