@@ -17,7 +17,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.UUID;
 
+import static mods.PDP1.extended_combat.Extendedcombat.props;
+
 public class ModItems {
+
+
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Extendedcombat.MODID);
 
     private static final UUID SPEED_ID = UUID.fromString("789e4567-e89b-12d3-a456-426614174000");
@@ -51,17 +56,22 @@ public class ModItems {
                     56,
                     7,
                     3.0,
-                    new Item.Properties()
+                    props()
             ));
 
     public static final RegistryObject<Item> GOLDEN_KNUCKLES = ITEMS.register("golden_knuckles",
-            () -> WeaponDamage.knuckles(25, 5, 2.5, new Item.Properties()));
+            () -> WeaponDamage.knuckles(
+                    25,
+                    5,
+                    2.5,
+                    props()
+            ));
 
     public static final RegistryObject<Item> DIAMOND_KNUCKLES = ITEMS.register("diamond_knuckles",
             () -> WeaponDamage.knuckles(
                     1280,
                     8,
                     2.5,
-                    new Item.Properties()
+                    props()
             ));
 }
