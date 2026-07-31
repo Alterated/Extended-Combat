@@ -3,7 +3,7 @@ package mods.PDP1.extended_combat.item.init;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import mods.PDP1.extended_combat.Extendedcombat;
-import mods.PDP1.extended_combat.item.registry.KnuckleDamage;
+import mods.PDP1.extended_combat.item.registry.WeaponDamage;
 import mods.PDP1.extended_combat.item.registry.ModArmorMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -24,7 +24,11 @@ public class ModItems {
     private static final UUID KNUCKLES_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
 
     public static final RegistryObject<Item> LEATHER_SLIDES = ITEMS.register("leather_slides", () ->
-            new ArmorItem(ModArmorMaterials.SLIDES, ArmorItem.Type.BOOTS, new Item.Properties()) { // Remove .durability(52)
+            new ArmorItem(
+                    ModArmorMaterials.SLIDES,
+                    ArmorItem.Type.BOOTS,
+                    new Item.Properties()
+            ) {
 
                 @Override
                 public int getMaxDamage(ItemStack stack) {
@@ -43,11 +47,21 @@ public class ModItems {
             });
 
     public static final RegistryObject<Item> IRON_KNUCKLES = ITEMS.register("iron_knuckles",
-            () -> new KnuckleDamage(56, 7, 3.0, new Item.Properties()));
+            () -> WeaponDamage.knuckles(
+                    56,
+                    7,
+                    3.0,
+                    new Item.Properties()
+            ));
 
     public static final RegistryObject<Item> GOLDEN_KNUCKLES = ITEMS.register("golden_knuckles",
-            () -> new KnuckleDamage(25, 5, 2.5, new Item.Properties()));
+            () -> WeaponDamage.knuckles(25, 5, 2.5, new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMOND_KNUCKLES = ITEMS.register("diamond_knuckles",
-            () -> new KnuckleDamage(1280, 8, 2.5, new Item.Properties()));
+            () -> WeaponDamage.knuckles(
+                    1280,
+                    8,
+                    2.5,
+                    new Item.Properties()
+            ));
 }

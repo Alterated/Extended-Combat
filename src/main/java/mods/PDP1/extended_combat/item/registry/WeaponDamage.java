@@ -13,9 +13,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.Properties;
 import java.util.UUID;
 
-public class KnuckleDamage extends Item {
+public class WeaponDamage extends Item {
     private static final UUID BASE_ATTACK_DAMAGE_UUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
     private static final UUID BASE_ATTACK_SPEED_UUID = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
     private static final UUID MAINHAND_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
@@ -23,13 +24,22 @@ public class KnuckleDamage extends Item {
 
     private final double attackDamage;
     private final double attackSpeed;
-
-    public KnuckleDamage(int maxDamage, int attackDamage, double attackSpeed, Item.Properties properties) {
+`
+    private WeaponDamage(int maxDamage, int attackDamage, double attackSpeed, Item.Properties properties) {
         // Sets the max durability on the properties object
         super(properties.durability(maxDamage));
 
         this.attackDamage = attackDamage;
         this.attackSpeed = attackSpeed;
+    }
+
+    public static WeaponDamage knuckles(int maxDamage, int attackDamage, double attackSpeed, Item.Properties properties) {
+        return new WeaponDamage(
+                maxDamage,
+                attackDamage,
+                attackSpeed,
+                properties
+        );
     }
 
     @Override
