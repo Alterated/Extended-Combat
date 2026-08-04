@@ -3,19 +3,17 @@ package mods.PDP1.extended_combat.item.init;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import mods.PDP1.extended_combat.Extendedcombat;
-import mods.PDP1.extended_combat.item.registry.WeaponDamage;
 import mods.PDP1.extended_combat.item.registry.ModArmorMaterials;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.UUID;
+import mods.PDP1.extended_combat.item.registry.ModItem;
 
 import static mods.PDP1.extended_combat.Extendedcombat.props;
 
@@ -26,9 +24,9 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Extendedcombat.MODID);
 
     private static final UUID SPEED_ID = UUID.fromString("789e4567-e89b-12d3-a456-426614174000");
-    private static final UUID KNUCKLES_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
 
-    public static final RegistryObject<Item> LEATHER_SLIDES = ITEMS.register("leather_slides", () ->
+    public static final RegistryObject<Item> LEATHER_SLIDES = ITEMS.register(
+            "leather_slides", () ->
             new ArmorItem(
                     ModArmorMaterials.SLIDES,
                     ArmorItem.Type.BOOTS,
@@ -49,29 +47,59 @@ public class ModItems {
                     }
                     return builder.build();
                 }
-            });
+            }
+    );
 
-    public static final RegistryObject<Item> IRON_KNUCKLES = ITEMS.register("iron_knuckles",
-            () -> WeaponDamage.knuckles(
-                    56,
-                    7,
+    public static final RegistryObject<Item> IRON_KNUCKLES = ITEMS.register(
+            "iron_knuckles",
+            () -> ModItem.knuckles(
+                    232,
+                    5,
                     3.0,
                     props()
-            ));
-
-    public static final RegistryObject<Item> GOLDEN_KNUCKLES = ITEMS.register("golden_knuckles",
-            () -> WeaponDamage.knuckles(
+            )
+    );
+    public static final RegistryObject<Item> GOLDEN_KNUCKLES = ITEMS.register(
+            "golden_knuckles",
+            () -> ModItem.knuckles(
                     25,
-                    5,
-                    2.5,
+                    3,
+                    2.7,
                     props()
-            ));
-
-    public static final RegistryObject<Item> DIAMOND_KNUCKLES = ITEMS.register("diamond_knuckles",
-            () -> WeaponDamage.knuckles(
+            )
+    );
+    public static final RegistryObject<Item> DIAMOND_KNUCKLES = ITEMS.register(
+            "diamond_knuckles",
+            () -> ModItem.knuckles(
                     1280,
-                    8,
-                    2.5,
+                    7,
+                    3.1,
                     props()
-            ));
+            )
+    );
+
+    public static final RegistryObject<Item> IRON_NAGINATA = ITEMS.register(
+            "iron_naginata",
+            () -> ModItem.naginata(
+                    256 + 56,
+                    7,
+                    props()
+            )
+    );
+    public static final RegistryObject<Item> GOLDEN_NAGINATA = ITEMS.register(
+            "golden_naginata",
+            () -> ModItem.naginata(
+                    46,
+                    5,
+                    props()
+            )
+    );
+    public static final RegistryObject<Item> DIAMOND_NAGINATA = ITEMS.register(
+            "diamond_naginata",
+            () -> ModItem.naginata(
+                    1902,
+                    9,
+                    props()
+            )
+    );
 }

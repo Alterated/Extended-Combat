@@ -36,6 +36,17 @@ public class TabEvents {
                     ModItems.DIAMOND_KNUCKLES.get().getDefaultInstance(),
                     CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
             );
+
+            tabData.getEntries().putAfter(
+                    ModItems.DIAMOND_KNUCKLES.get().getDefaultInstance(),
+                    ModItems.IRON_NAGINATA.get().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
+            tabData.getEntries().putAfter(
+                    ModItems.IRON_NAGINATA.get().getDefaultInstance(),
+                    ModItems.GOLDEN_NAGINATA.get().getDefaultInstance(),
+                    CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
+            );
         }
     }
 }
