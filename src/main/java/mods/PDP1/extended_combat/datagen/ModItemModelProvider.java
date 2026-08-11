@@ -1,6 +1,7 @@
 package mods.PDP1.extended_combat.datagen;
 
 import mods.PDP1.extended_combat.Extendedcombat;
+import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -17,12 +18,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        simpleItem(ModItems.ROPE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("minecraft", "item/generated")).texture("layer0",
                 new ResourceLocation(Extendedcombat.MODID, "item/" + item.getId().getPath())
         );
     }

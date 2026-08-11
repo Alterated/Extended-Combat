@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "A A"
+  ],
+  "result": {
+    "count": 2,
+    "item": "extended_combat:golden_knuckles"
+  },
+  "show_notification": true
+}

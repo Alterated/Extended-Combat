@@ -1,6 +1,7 @@
 package mods.PDP1.extended_combat.datagen;
 
 import mods.PDP1.extended_combat.Extendedcombat;
+import mods.PDP1.extended_combat.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -14,7 +15,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

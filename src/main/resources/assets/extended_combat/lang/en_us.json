@@ -5,5 +5,8 @@
   "item.extended_combat.diamond_knuckles": "Diamond Knuckles",
   "item.extended_combat.iron_naginata": "Iron Naginata",
   "item.extended_combat.golden_naginata": "Golden Naginata",
-  "item.extended_combat.diamond_naginata": "Diamond Naginata"
+  "item.extended_combat.diamond_naginata": "Diamond Naginata",
+  "item.extended_combat.longbow": "Longbow",
+  "item.extended_combat.rope": "Rope",
+  "effect.extended_combat.bleeding": "Bleeding"
 }

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": [
+      {
+        "tag": "minecraft:planks"
+      },
+      {
+        "tag": "minecraft:logs"
+      }
+    ],
+    "B": {
+      "item": "extended_combat:rope"
+    },
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "D": {
+      "item": "minecraft:bow"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "CDB",
+    " AB"
+  ],
+  "result": {
+    "item": "extended_combat:longbow"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "A A"
+  ],
+  "result": {
+    "item": "extended_combat:leather_slides"
+  },
+  "show_notification": true
+}

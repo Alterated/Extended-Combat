@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "AA ",
+    "AA "
+  ],
+  "result": {
+    "item": "extended_combat:rope"
+  },
+  "show_notification": true
+}

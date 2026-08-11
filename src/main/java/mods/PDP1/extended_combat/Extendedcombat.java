@@ -1,6 +1,7 @@
 package mods.PDP1.extended_combat;
 
 import com.mojang.logging.LogUtils;
+import mods.PDP1.extended_combat.effect.init.ModEffects;
 import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +27,7 @@ public class Extendedcombat {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(modEventBus);
+        ModEffects.MOB_EFFECTS.register(modEventBus);
 
         LOGGER.info("Hello");
     }

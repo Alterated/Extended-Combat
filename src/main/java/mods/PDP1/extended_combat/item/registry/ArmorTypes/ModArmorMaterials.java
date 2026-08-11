@@ -1,4 +1,4 @@
-package mods.PDP1.extended_combat.item.registry;
+package mods.PDP1.extended_combat.item.registry.ArmorTypes;
 
 import mods.PDP1.extended_combat.Extendedcombat;
 import net.minecraft.sounds.SoundEvent;

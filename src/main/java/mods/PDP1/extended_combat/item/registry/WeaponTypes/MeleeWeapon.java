@@ -1,12 +1,10 @@
-package mods.PDP1.extended_combat.item.registry;
+package mods.PDP1.extended_combat.item.registry.WeaponTypes;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import mods.PDP1.extended_combat.item.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -21,17 +19,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import java.util.List;
 import java.util.UUID;
-import java.util.function.Supplier;
 
 @SuppressWarnings({"SpellCheckingInspection", "NullableProblems"})
-public class WeaponDamage extends Item {
+public class MeleeWeapon extends Item {
     private static final UUID BASE_ATTACK_DAMAGE_UUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
     private static final UUID BASE_ATTACK_SPEED_UUID = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
     private static final UUID MAINHAND_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
@@ -46,7 +38,7 @@ public class WeaponDamage extends Item {
     private final boolean canBlock;
     private final boolean isDoubleHanded;
 
-    WeaponDamage(double attackReach, int maxDamage, int attackDamage, double attackSpeed, double movementSpeedmultiplier, boolean canSweep, boolean canBlock, boolean isDoubleHanded, Item.Properties properties) {
+    MeleeWeapon(double attackReach, int maxDamage, int attackDamage, double attackSpeed, double movementSpeedmultiplier, boolean canSweep, boolean canBlock, boolean isDoubleHanded, Item.Properties properties) {
         super(properties.durability(maxDamage));
 
 
