@@ -1,0 +1,6 @@
+// 1.20.1	2026-09-07T17:46:38.3394528	Block States: extended_combat
+a3658e97242c954e712a5168c358ab97f06a35dd assets/extended_combat/blockstates/rope_block.json
+0b23846faa7aa8117de079357c20e25d7157b4c3 assets/extended_combat/blockstates/rope_bundle.json
+a47c327af1dfe5d6b626b53ef72f01d9c0a94873 assets/extended_combat/models/block/rope_block.json
+d910439426a1397828fad337272eb33f27a59dd0 assets/extended_combat/models/block/rope_bundle.json
+70cda577b8b9760e38f443bf7b3e516326cf00c3 assets/extended_combat/models/item/rope_bundle.json

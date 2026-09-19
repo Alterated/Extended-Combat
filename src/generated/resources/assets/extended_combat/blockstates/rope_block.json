@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "extended_combat:block/rope_block"
+    }
+  }
+}

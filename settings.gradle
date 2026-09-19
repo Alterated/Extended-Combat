@@ -14,4 +14,4 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
 }
 
-rootProject.name = 'extended-combat'
+rootProject.name = 'extended-combat_1.20.1'

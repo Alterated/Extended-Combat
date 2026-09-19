@@ -1,0 +1,29 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "extended_combat:item/longbow_pulling/long_bow_pulling1"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 1.3, 1.3, 1.3 ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 0, -2, 4 ],
+      "scale": [ 1.3, 1.3, 1.3 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ -180, -90, -45 ],
+      "translation": [ 0, -2.3, 4 ],
+      "scale": [ 1.3, 1.3, 1.3 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 25 ],
+      "translation": [ 1.5, 3.5, 1.13 ],
+      "scale": [ 1, 1, 1 ]
+    }
+
+  }
+}

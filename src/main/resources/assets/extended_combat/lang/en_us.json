@@ -7,6 +7,6 @@
   "item.extended_combat.golden_naginata": "Golden Naginata",
   "item.extended_combat.diamond_naginata": "Diamond Naginata",
   "item.extended_combat.longbow": "Longbow",
-  "item.extended_combat.rope": "Rope",
+  "block.extended_combat.rope_block": "Rope",
   "effect.extended_combat.bleeding": "Bleeding"
 }
