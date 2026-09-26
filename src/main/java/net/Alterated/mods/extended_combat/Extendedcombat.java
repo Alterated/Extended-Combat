@@ -2,10 +2,16 @@ package net.Alterated.mods.extended_combat;
 
 import com.mojang.logging.LogUtils;
 import net.Alterated.mods.extended_combat.block.init.ModBlocks;
+import net.Alterated.mods.extended_combat.entity.ModEntities;
 import net.Alterated.mods.extended_combat.item.init.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -29,6 +35,16 @@ public class Extendedcombat {
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
 
+        ModEntities.ENTITY_TYPES.register(modEventBus);
+
         LOGGER.info("Hello");
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.THROWING_AXE.get(), ThrownItemRenderer::new);
+        }
     }
 }

@@ -1,8 +1,11 @@
 package net.Alterated.mods.extended_combat.event.client;
 
 import net.Alterated.mods.extended_combat.Extendedcombat;
+import net.Alterated.mods.extended_combat.entity.ModEntities;
 import net.Alterated.mods.extended_combat.item.init.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;

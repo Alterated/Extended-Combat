@@ -1,0 +1,18 @@
+{
+  "parent": "item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "extended_combat:item/throwing_axe_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "extended_combat:item/throwing_axe_gui"
+    },
+    "ground": {
+      "parent": "extended_combat:item/throwing_axe_gui"
+    },
+    "fixed": {
+      "parent": "extended_combat:item/throwing_axe_gui"
+    }
+  }
+}

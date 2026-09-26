@@ -80,6 +80,12 @@ public class ModItems {
             )
     );
 
+    public static final RegistryObject<Item> THROWING_AXE = ITEMS.register(
+            "throwing_axe", () -> ModItem.throwing_axe(
+                    347, 5, 2, props()
+            )
+    );
+
     public static final RegistryObject<Item> ROPE_BUNDLE_ITEM = registerBlockItem(
             "rope_bundle",
             ROPE_BUNDLE

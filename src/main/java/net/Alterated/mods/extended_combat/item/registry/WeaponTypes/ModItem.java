@@ -12,6 +12,8 @@ import static net.Alterated.mods.extended_combat.Extendedcombat.props;
 
 public class ModItem {
 
+    public static Double DEFAULT_REACH = 3.0D;
+
     /**
      * Works as an empty constructor
      * lets the class keep valid syntax
@@ -30,7 +32,7 @@ public class ModItem {
      */
     public static MeleeWeapon knuckles(int maxDamage, int attackDamage, double attackSpeed, Item.Properties properties) {
         return new MeleeWeapon(
-                0,
+                DEFAULT_REACH,
                 maxDamage,
                 attackDamage,
                 attackSpeed,
@@ -80,11 +82,11 @@ public class ModItem {
      */
     public static MeleeWeapon throwing_axe(int maxDamage, int attackDamage, double attackSpeed, Item.Properties properties) {
         return new MeleeWeapon(
-                3,
+                1,
                 maxDamage,
                 attackDamage,
                 attackSpeed,
-                0,
+                1,
                 false,
                 false,
                 false,

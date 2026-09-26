@@ -2,8 +2,12 @@ package net.Alterated.mods.extended_combat.item.registry.WeaponTypes;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.Alterated.mods.extended_combat.entity.custom.ThrowingAxeProjectileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -31,11 +35,11 @@ import java.util.UUID;
  */
 @SuppressWarnings({"SpellCheckingInspection", "NullableProblems"})
 public class MeleeWeapon extends Item {
-    private static final UUID MOD_BASE_ATTACK_DAMAGE_UUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
-    private static final UUID MOD_BASE_ATTACK_SPEED_UUID = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
-    private static final UUID MAINHAND_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
-    private static final UUID OFFHAND_SPEED_ID = UUID.fromString("987fc234-a12b-34c5-d678-012213141516");
-    private static final UUID WEAPON_REACH_UUID = UUID.fromString("df2f3297-d376-4cce-b8d6-ae9faaa98ce3");
+    protected static final UUID MOD_BASE_ATTACK_DAMAGE_UUID = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
+    protected static final UUID MOD_BASE_ATTACK_SPEED_UUID = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
+    protected static final UUID MAINHAND_SPEED_ID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
+    protected static final UUID OFFHAND_SPEED_ID = UUID.fromString("987fc234-a12b-34c5-d678-012213141516");
+    protected static final UUID WEAPON_REACH_UUID = UUID.fromString("df2f3297-d376-4cce-b8d6-ae9faaa98ce3");
 
     private final double attackDamage;
     private final double attackSpeed;
@@ -141,7 +145,7 @@ public class MeleeWeapon extends Item {
                     new AttributeModifier(
                             WEAPON_REACH_UUID,
                             "Mainhand Reach",
-                            this.attackReach,
+                            this.attackReach - 3.0D,
                             AttributeModifier.Operation.ADDITION
                     )
             );
@@ -173,7 +177,8 @@ public class MeleeWeapon extends Item {
     }
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.BLOCK;
+        if (canBlock) { return UseAnim.BLOCK; }
+        return UseAnim.BOW;
     }
     @Override
     public int getUseDuration(ItemStack stack) {
@@ -185,6 +190,29 @@ public class MeleeWeapon extends Item {
         if (this.canBlock) {
             player.startUsingItem(hand);
             return InteractionResultHolder.consume(itemstack);
+        }
+        if (this.isThrowable) {
+            level.playSound((Player)null, player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+
+            if (!level.isClientSide) {
+                ThrowingAxeProjectileEntity tAxe = new ThrowingAxeProjectileEntity(level, player);
+
+                // FIX: Create a duplicate copy so shrinking it won't break the projectile's reference!
+                ItemStack projectileStack = itemstack.copy();
+                projectileStack.setCount(1);
+                tAxe.setItem(projectileStack);
+
+                tAxe.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+                level.addFreshEntity(tAxe);
+            }
+
+            player.awardStat(Stats.ITEM_USED.get(this));
+            if (!player.getAbilities().instabuild) {
+                itemstack.shrink(1);
+            }
+
+            return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
         }
         return InteractionResultHolder.pass(itemstack);
     }
